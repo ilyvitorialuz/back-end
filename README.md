@@ -14,11 +14,11 @@ Este sistema é uma aplicação enxuta desenvolvida com Laravel, ideal para o di
 
 ## Funcionalidades
 
-- Cadastro de Clientes: nome completo, telefone, e-mail, CPF, endereço, entre outros.
-- Cadastro de Animais: nome, idade, espécie, raça, peso e características gerais.
-- Registro de Consultas: descrição do procedimento, data, observações.
-- Vínculo entre clientes e seus respectivos animais.
-- Histórico completo de atendimentos e agendamentos realizados.
+* Cadastro de Clientes: nome completo, telefone, e-mail, CPF, endereço, entre outros.
+* Cadastro de Animais: nome, idade, espécie, raça, peso e características gerais.
+* Registro de Consultas: descrição do procedimento, data, observações.
+* Vínculo entre clientes e seus respectivos animais.
+* Histórico completo de atendimentos e agendamentos realizados.
 
 ---
 
@@ -26,10 +26,10 @@ Este sistema é uma aplicação enxuta desenvolvida com Laravel, ideal para o di
 
 Antes de começar, certifique-se de ter instalado:
 
-- [PHP 8.4 ou superior](https://www.php.net/downloads.php)  
-- [Docker](https://www.docker.com/get-started)  
-- [Composer](https://getcomposer.org/)  
-- [Laravel Sail](https://laravel.com/docs/12.x/sail)  
+* [PHP 8.4 ou superior](https://www.php.net/downloads.php)
+* [Docker](https://www.docker.com/get-started)
+* [Composer](https://getcomposer.org/)
+* [Laravel Sail](https://laravel.com/docs/12.x/sail)
 
 1. Clone este repositório:
 
@@ -38,13 +38,16 @@ git clone https://github.com/ilyvitorialuz/back-end.git
 cd back-end
 ```
 
-2. Inicialize o ambiente com o Sail:
+2. Instale as dependências e configure o ambiente:
 
 ```bash
+composer install
+cp .env.example .env
 ./vendor/bin/sail up -d
+./vendor/bin/sail artisan key:generate
 ```
 
-3. Configure seu `.env` com os dados do banco de dados:
+3. Configure seu `.env` com os dados do banco de dados, se necessário:
 
 ```env
 DB_CONNECTION=mysql
@@ -67,7 +70,13 @@ DB_PASSWORD=
 ./vendor/bin/sail artisan db:seed
 ```
 
-6. Acesse a aplicação:
+6. (Opcional) Crie um usuário administrador para acessar o painel do Filament:
+
+```bash
+./vendor/bin/sail artisan make:filament-user
+```
+
+7. Acesse a aplicação:
 
 ```
 http://localhost
@@ -85,11 +94,14 @@ Este projeto foi idealizado a partir das rotinas e necessidades de clínicas vet
 
 Tem dúvidas, sugestões ou quer colaborar? Entre em contato com a equipe de desenvolvimento:
 
-- Coordenação do Projeto:
-  - Nome: Ily Vitória da Luz Soares
+* Coordenação do Projeto:
 
-- Desenvolvimento Back-End:
-  - Nome: João Gabryel Dias Santos
+  * Nome: Ily Vitória da Luz Soares
 
-- Desenvolvimento Front-End:
-  - Nome: Ana Beatriz Nascimento Resplandes de Araújo
+* Desenvolvimento Back-End:
+
+  * Nome: João Gabryel Dias Santos
+
+* Desenvolvimento Front-End:
+
+  * Nome: Ana Beatriz Nascimento Resplandes de Araújo
